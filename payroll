@@ -1,0 +1,34 @@
+using System;
+
+namespace LabThreeThree
+{
+    public class Payroll
+    {
+        static void Main(string[] args)
+        {
+            double hourlyRate;
+            double workedHours;
+            double payTax = 0.30;
+
+            Console.WriteLine("How many hours have you worked?");
+            workedHours = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("What is your hourly pay rate?");
+            hourlyRate = Convert.ToInt32(Console.ReadLine());
+
+            double grossPay = hourlyRate * workedHours;
+
+            Console.WriteLine("Your gross pay is : " + grossPay);
+
+            Console.WriteLine("Your withholding tax is : " + grossPay * payTax);
+
+            double witholdingTax = grossPay * payTax;
+
+            double netPay = grossPay - witholdingTax;
+
+            Console.WriteLine("Your net pay is : " + netPay);
+
+            Console.ReadKey();
+        }
+    }
+}
